@@ -47,7 +47,7 @@ class Roteador
             list($controller, $action) = explode('@', self::$rotas[$metodo_http][$rota]);
 
             /*
-             * 
+             * Cria uma instância do controlador e chama o método (action) passando os parâmetros da requisição
              */
             try {
                 $class = 'controllers\\' . $controller;
