@@ -1,0 +1,23 @@
+{
+    "name": "pedro-augusto/mvc",
+    "description": "Esqueleto utilizando padrão MVC com uma classe base que permite acesso ao banco de dados MySQL",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Pedro Augusto"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "system\\": ["app/system"],
+            "controllers\\": ["app/controllers"],
+            "middlewares\\": ["app/middlewares"],
+            "models\\": ["app/models"]
+        },
+        "files": [
+            "app/config.php",
+            "app/helpers/functions.php"
+        ]
+    }
+}
