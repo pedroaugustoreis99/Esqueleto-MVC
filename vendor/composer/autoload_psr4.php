@@ -9,5 +9,8 @@ return array(
     'system\\' => array($baseDir . '/app/system'),
     'models\\' => array($baseDir . '/app/models'),
     'middlewares\\' => array($baseDir . '/app/middlewares'),
+    'helpers\\' => array($baseDir . '/app/helpers'),
     'controllers\\' => array($baseDir . '/app/controllers'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
+    'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
 );

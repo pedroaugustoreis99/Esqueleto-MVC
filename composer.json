@@ -1,19 +1,22 @@
 {
-    "name": "pedro-augusto/mvc",
-    "description": "Esqueleto utilizando padrão MVC com uma classe base que permite acesso ao banco de dados MySQL",
+    "name": "pedro-augusto/esqueleto-mvc",
+    "description": "Esqueleto-MVC é um núcleo de aplicação em PHP que segue o padrão MVC (Model-View-Controller). Ele permite que os desenvolvedores foquem nas funcionalidades específicas do projeto enquanto utilizam recursos pré-fabricados e otimizados para tarefas comuns.",
     "type": "project",
     "authors": [
         {
             "name": "Pedro Augusto"
         }
     ],
-    "require": {},
+    "require": {
+        "monolog/monolog": "^3.7"
+    },
     "autoload": {
         "psr-4": {
             "system\\": ["app/system"],
             "controllers\\": ["app/controllers"],
             "middlewares\\": ["app/middlewares"],
-            "models\\": ["app/models"]
+            "models\\": ["app/models"],
+            "helpers\\": ["app/helpers"]
         },
         "files": [
             "app/config.php",
