@@ -3,6 +3,7 @@
 namespace system;
 
 use Error;
+use helpers\Log;
 
 class Roteador
 {
@@ -55,13 +56,23 @@ class Roteador
                 $object->$action(...$params);
             } catch(Error $e) {
                 /*
-                 * DEPOIS VOU IMPLEMENTAR UMA LÓGICA PARA SISTEMA DE LOGS
+                 * O erro será registrado no sistema de Logs.
                  */
-                echo "Ocorreu o seguinte erro: " . $e->getMessage();
+                Log::critical("Ocorreu um erro na action " . __METHOD__ . ". Mensagem do erro: " . $e->getMessage());
+
+                /*
+                 * Essa view informa que ocorreu um problema interno no sistema!
+                 * Ela tem um link que retorna para à página principal.
+                 */
+                view('sistema/erro-interno');
             }
 
         } else {
-            echo '<p>Vou criar uma view futuramente para informar que <mark>A rota acessada não existe!</mark></p>';
+            /*
+             * Essa view informa ao usuário que a página não existe!
+             * Ela tem um link que retorna para à página principal.
+             */
+            view('sistema/pagina-nao-encontrada');
         }
     }
 }
